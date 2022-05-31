@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>♡你是无意穿堂风，偏偏孤倨引山洪。</title>
+    <style>
+        .container {
+			color:#fa7c8d;
+			text-align: center;
+            width: 60%;
+            margin: 10% auto 0;
+            background-color: #f0f0f0;
+            padding: 2% 5%;
+            border-radius: 10px
+        }
+        #str{
+            width: 500px;
+            text-align: center;
+            margin: 0 auto;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>我是垂眉摆渡翁，独独缄言偏爱侬。<br/>
+            <span id="str"></span>
+        </h1>
+    </div>
+<script type="text/javascript" src="uncode.js" > </script>
+<script type="text/javascript">
+     window.onload = function()
+    {
+        var name=getQueryString("n");
+        var idn = new idnMapping();
+        var name = idn.toUnicode(name);
+        if(name){
+            document.getElementById('str').innerHTML = name + '&ensp;&ensp;我喜欢你。';
+        }
+     }
+    function getQueryString(key){
+        var reg = new RegExp("(^|&)"+key+"=([^&]*)(&|$)");
+        var result = window.location.search.substr(1).match(reg);
+        return result?decodeURIComponent(result[2]):null;
+    }
+</script>
+</body>
+</html>
